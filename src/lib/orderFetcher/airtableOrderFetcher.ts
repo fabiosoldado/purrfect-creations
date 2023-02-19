@@ -2,7 +2,7 @@ import { AirtableBase } from 'airtable/lib/airtable_base'
 import Airtable, { FieldSet, Records } from 'airtable'
 import OrderFetcher, {
   OrderSortDirection,
-} from '@/lib/orderQuerier/orderFetcher'
+} from '@/lib/orderFetcher/orderFetcher'
 import { Order } from '@/lib/dashboard/dashboardInfo'
 import { Config } from '@/config'
 

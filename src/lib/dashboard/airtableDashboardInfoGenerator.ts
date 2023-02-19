@@ -1,4 +1,4 @@
-import airtableOrderFetcher from '@/lib/orderQuerier/airtableOrderFetcher'
+import airtableOrderFetcher from '@/lib/orderFetcher/airtableOrderFetcher'
 import InMemoryDashboardInfoCache from '@/lib/dashboard/InMemoryDashboardInfoCache'
 import DashboardInfoGenerator from '@/lib/dashboard/DashboardInfoGenerator'
 

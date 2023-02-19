@@ -1,6 +1,6 @@
 import OrderFetcher, {
   OrderSortDirection,
-} from '@/lib/orderQuerier/orderFetcher'
+} from '@/lib/orderFetcher/orderFetcher'
 import DashboardInfo, {
   DashboardMetrics,
   Order,
