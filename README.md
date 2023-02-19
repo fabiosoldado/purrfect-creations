@@ -1,38 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+To run the application through docker, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# build
+docker build -t purrfect-creations .
+# and then run
+docker run -p 3000:3000 purrfect-creations
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Approach
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This is a solution in typecript using the nextjs framework. It implements a simple interface with
+some metrics, recent orders and the ability to refresh. Refreshing will call airtable and recompute
+all the metrics.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+For a quicker response time, the dashboard metrics is cached through a simple in memory cache solution.
+When pressing the refresh button, the cache is invalidated and repopulated with the recomputed metrics.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To keep this exercise simple, this solution does not implement any kind of authentication. The
+authentication with airtable is done through a personal token.
 
-## Learn More
+Additionally, only unit tests for the DashboardInfoGenerator were implemented.
 
-To learn more about Next.js, take a look at the following resources:
+## lib
+### orderFetcher
+Fetches all the orders, that will be used to generate metrics for the dashboard.
+- `airtableOrderFetcher` - Fetches orders from Airtable
+    
+### dashboard
+- `DashboardInfoGenerator` - Fetches all the orders and generates the metrics.
+- `airtableDashboardInfoGenerator` - Instance of `DashboardInfoGenerator` that uses `airtableOrderFetcher`
+as the order data provider.
+- `InMemoryDashboardInfoCache` - Simple in-memory cache implementation to cache the dashboard info.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
