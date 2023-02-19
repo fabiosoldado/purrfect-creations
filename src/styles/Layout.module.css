@@ -1,0 +1,103 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #addeee;
+    font-size: 24px;
+    padding: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.refreshButtonContainer {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.refreshButton {
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 0.5rem 1rem;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.metricsContainer {
+    padding: 2rem;
+    text-align: center;
+}
+
+.metricsContainer h1 {
+    padding-bottom: 2rem;
+}
+
+.metricsComponents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+}
+
+.metric {
+    flex: 1;
+    text-align: center;
+}
+
+.metricName {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.metricValue {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.orderListContainer {
+    padding: 2rem;
+    text-align: center;
+}
+
+.orderTable {
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+    font-size: 20px;
+}
+
+.orderTable th {
+    padding: 5px 0;
+    font-size: 22px;
+}
+.orderTable td {
+    padding: 5px;
+}
+
+.orderText {
+    text-align: left;
+}
+
+.orderPrice {
+    text-align: right;
+}
+
+
+.orderListContainer h1 {
+    padding-bottom: 2rem;
+}
+
+.orderListContainer li {
+    background-color: green;
+    padding: 5px;
+}
