@@ -1,21 +1,11 @@
-import { Order } from '@/lib/dashboard/DashboardInfo'
+import { Order } from '@/lib/dashboard/dashboardInfo'
 import styles from '@/styles/Layout.module.css'
 
 export interface DashboardOrderListProps {
   orders: Order[]
 }
 
-function formatPrice(price: number) {
-  return price.toLocaleString('en-GB', {
-    style: 'currency',
-    currency: 'GBP',
-  })
-}
-
-function formatDate(date: string): string {
-  return new Date(date).toLocaleDateString('en-GB')
-}
-
+/** Container for the list of recent orders in the dashboard */
 export default function DashboardOrderList({
   orders,
 }: DashboardOrderListProps) {
@@ -58,4 +48,15 @@ export default function DashboardOrderList({
       </div>
     </>
   )
+}
+
+function formatPrice(price: number) {
+  return price.toLocaleString('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+  })
+}
+
+function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString('en-GB')
 }

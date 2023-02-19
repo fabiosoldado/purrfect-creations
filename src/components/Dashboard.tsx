@@ -1,5 +1,5 @@
 import styles from '../styles/Layout.module.css'
-import DashboardInfo from '@/lib/dashboard/DashboardInfo'
+import DashboardInfo from '@/lib/dashboard/dashboardInfo'
 import DashboardMetricsContainer from '@/components/DashboardMetrics'
 import DashboardOrderList from '@/components/DashboardOrderList'
 import React from 'react'
@@ -10,6 +10,8 @@ export interface DashboardProps {
   isRefreshing: boolean
 }
 
+/** Component for the dashboard with all the metics and recent order
+ * information */
 export default function Dashboard({
   dashboardInfo,
   refreshFunction,

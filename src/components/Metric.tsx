@@ -11,6 +11,18 @@ interface MetricProps {
   type: MetricType
 }
 
+/** Component for a single metric in the dashboard */
+export default function Metric({ name, value, type }: MetricProps) {
+  return (
+    <div className={styles.metric}>
+      <h3 className={styles.metricName}>{name}</h3>
+      <div className={styles.metricValue}>
+        {valueRepresentation(value, type)}
+      </div>
+    </div>
+  )
+}
+
 function valueRepresentation(value: number, type: MetricType): string {
   switch (type) {
     case MetricType.count:
@@ -21,15 +33,4 @@ function valueRepresentation(value: number, type: MetricType): string {
         currency: 'GBP',
       })
   }
-}
-
-export default function Metric({ name, value, type }: MetricProps) {
-  return (
-    <div className={styles.metric}>
-      <h3 className={styles.metricName}>{name}</h3>
-      <div className={styles.metricValue}>
-        {valueRepresentation(value, type)}
-      </div>
-    </div>
-  )
 }

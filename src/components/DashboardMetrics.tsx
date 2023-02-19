@@ -1,4 +1,4 @@
-import { DashboardMetrics } from '@/lib/dashboard/DashboardInfo'
+import { DashboardMetrics } from '@/lib/dashboard/dashboardInfo'
 import styles from '@/styles/Layout.module.css'
 import Metric, { MetricType } from '@/components/Metric'
 
@@ -6,6 +6,7 @@ export interface DashboardMetricsProps {
   dashboardMetrics: DashboardMetrics
 }
 
+/** Container for all the metrics in the dashboard */
 export default function DashboardMetricsContainer({
   dashboardMetrics,
 }: DashboardMetricsProps) {
